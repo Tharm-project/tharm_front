@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "387422186211",
+    "project_id": "tharm-16f63",
+    "storage_bucket": "tharm-16f63.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:387422186211:android:860156797cd590db4fb3d6",
+        "android_client_info": {
+          "package_name": "com.example.tharmproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "387422186211-ac40vn71ds8k2bjcd01qj2v9g0bldfv8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAybyzLb9UtP0n75hpvRzLTNL_YITEaZEY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "387422186211-ac40vn71ds8k2bjcd01qj2v9g0bldfv8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
