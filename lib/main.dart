@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:get/get.dart';
+import 'package:tharmproject/screens/login_screen.dart';
 import 'firebase_options.dart';
-import 'package:tharmproject/widget/login.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -14,18 +15,19 @@ void main() async{
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
+      debugShowCheckedModeBanner: true,
       title: 'Flutter Demo',
       theme: ThemeData(
-        scaffoldBackgroundColor: Colors.white
+        scaffoldBackgroundColor: const Color(0xffF7F7F7),
+        // scaffoldBackgroundColor: Colors.white,
           // colorScheme: ColorScheme.fromSeed(
           //     seedColor: const Color.fromARGB(255, 192, 145, 145)),
           // useMaterial3: true,
           ),
-      home: const Login(),
+      home: const LoginScreen(),
     );
   }
 }

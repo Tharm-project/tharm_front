@@ -7,6 +7,42 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:387422186211:android:c8535ce50f35ee7e4fb3d6",
+        "android_client_info": {
+          "package_name": "com.Tharm.tharm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "387422186211-ac40vn71ds8k2bjcd01qj2v9g0bldfv8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAybyzLb9UtP0n75hpvRzLTNL_YITEaZEY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "387422186211-ac40vn71ds8k2bjcd01qj2v9g0bldfv8.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "387422186211-9ud76i9h60v5dj4pitak6j327n3cik5l.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.tharmproject"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:387422186211:android:860156797cd590db4fb3d6",
         "android_client_info": {
           "package_name": "com.example.tharmproject"
@@ -29,6 +65,13 @@
             {
               "client_id": "387422186211-ac40vn71ds8k2bjcd01qj2v9g0bldfv8.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "387422186211-9ud76i9h60v5dj4pitak6j327n3cik5l.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.tharmproject"
+              }
             }
           ]
         }
