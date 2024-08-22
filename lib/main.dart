@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:get/get.dart';
+import 'package:tharmproject/screens/learning_screen.dart';
 import 'package:tharmproject/screens/login_screen.dart';
 import 'firebase_options.dart';
 
@@ -27,7 +28,8 @@ class MyApp extends StatelessWidget {
           //     seedColor: const Color.fromARGB(255, 192, 145, 145)),
           // useMaterial3: true,
           ),
-      home: const LoginScreen(),
+      home: const LearningScreen(),
+      // home: const LoginScreen(),
     );
   }
 }

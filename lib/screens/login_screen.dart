@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tharmproject/screens/home_screen.dart';
+import 'package:tharmproject/screens/learning_screen.dart';
 
 
 class LoginScreen extends StatelessWidget {
@@ -64,7 +65,8 @@ class LoginScreen extends StatelessWidget {
               ),
               onPressed: () {
                 Get.off(
-                  const HomeScreen(),
+                  const LearningScreen(),
+                  // const HomeScreen(),
                 );
               },
               child: const Text(
