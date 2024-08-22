@@ -10,18 +10,9 @@ class LearningScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.lightBlue,
-        // backgroundColor: Colors.white,
-        // title: const Text(
-        //   'Tharm',
-        //   style: TextStyle(
-        //     fontSize: 20,
-        //     fontWeight: FontWeight.bold
-        //   ),
-        // ),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        // mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
             margin: const EdgeInsets.fromLTRB(12, 9, 0, 21),
@@ -31,14 +22,11 @@ class LearningScreen extends StatelessWidget {
             ),
           ),
           Column(
-            // crossAxisAlignment: CrossAxisAlignment.center,
-            // mainAxisAlignment: MainAxisAlignment.center,
             children: [
               // 첫번째 박스
               SizedBox(
                 height: 169,
                 child: Stack(
-                  // alignment: Alignment.center,
                   children: [
                     Container(
                       width: 290,
@@ -77,7 +65,6 @@ class LearningScreen extends StatelessWidget {
                         bottom: 0,
                         left: 105,
                         child: SizedBox(
-                          // width: 130,
                           height: 30,
                           child: TextButton(
                             style: TextButton.styleFrom(
@@ -93,9 +80,9 @@ class LearningScreen extends StatelessWidget {
                         ),
                       )
                     ),
+
                     // border바
                     Container(
-                      // alignment: Alignment.center,
                       width: 283,
                       decoration: BoxDecoration(
                         border: Border(bottom: BorderSide(color: Colors.black))
@@ -104,42 +91,39 @@ class LearningScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              Container(
-              ),
-              // SizedBox(),
-              SizedBox(
-                width: 235,
-                  // height: 220,
-                child: Center(
-                  child: Column(
-                    // mainAxisAlignment: MainAxisAlignment.center,
-                    // crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Row(
-                        // mainAxisAlignment: MainAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text('전체 학습 내역'),
-                          IconButton(
-                              onPressed: () {},
-                              icon: const Icon(Icons.close_outlined)),
-                        ],
-                      ),
-                      const Column(
-                        children: [
-                          Text('학습명'),
-                          Text('학습명'),
-                          Text('학습명'),
-                          SizedBox(
-                            child: Image(
-                                image: AssetImage('assets/images/graph.png')),
-                          )
-                        ],
-                      )
-                    ],
-                  ),
-                ),
-              )
+              // Container(
+              // ),
+
+              // SizedBox(
+              //   width: 235,
+              //     // height: 220,
+              //   child: Center(
+              //     child: Column(
+              //       children: [
+              //         Row(
+              //           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              //           children: [
+              //             Text('전체 학습 내역'),
+              //             IconButton(
+              //               onPressed: () {},
+              //               icon: const Icon(Icons.close_outlined)),
+              //           ],
+              //         ),
+              //         const Column(
+              //           children: [
+              //             Text('학습명'),
+              //             Text('학습명'),
+              //             Text('학습명'),
+              //             SizedBox(
+              //               child: Image(
+              //                   image: AssetImage('assets/images/graph.png')),
+              //             )
+              //           ],
+              //         )
+              //       ],
+              //     ),
+              //   ),
+              // )
             ],
           ),
         ],
