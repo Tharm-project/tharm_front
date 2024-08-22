@@ -21,8 +21,10 @@ class HomeScreen extends StatelessWidget {
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
+        // crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
+            alignment: Alignment.centerLeft,
             margin: const EdgeInsets.fromLTRB(12, 9, 0, 21),
             child: const Text(
               'Tharm',
