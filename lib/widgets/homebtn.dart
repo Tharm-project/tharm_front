@@ -7,12 +7,12 @@ class CustomButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(15),
-          border: Border.all(
-            width: 2,
-            color: const Color(0xffECECEC),
-          )),
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(15),
+        border: Border.all(
+          width: 2,
+          color: const Color(0xffECECEC),
+        )),
       width: 90,
       height: 90,
       child: TextButton(
@@ -23,13 +23,11 @@ class CustomButton extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(
+            Container(
               width: 50,
               height: 50,
+              padding: const EdgeInsets.only(bottom: 2),
               child: Image.asset('assets/images/home-1.png'),
-            ),
-            const SizedBox(
-              height: 2,
             ),
             const Text(
               '학습자료',

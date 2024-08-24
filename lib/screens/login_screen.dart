@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:tharmproject/screens/home_screen.dart';
 import 'package:tharmproject/screens/learning_screen.dart';
 
 
@@ -20,7 +19,7 @@ class LoginScreen extends StatelessWidget {
               'Tharm',
               style: TextStyle(fontSize: 29, fontWeight: FontWeight.bold),
             ),
-            const SizedBox(height: 60),
+            const Padding(padding: EdgeInsets.only(top: 60)),
             const SizedBox(
               width: 290,
               height: 50,
@@ -37,7 +36,7 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(height: 5),
+            const Padding(padding: EdgeInsets.only(top: 5)),
             const SizedBox(
               width: 290,
               height: 50,
@@ -55,9 +54,7 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(
-              height: 10,
-            ),
+            const Padding(padding: EdgeInsets.only(top: 10)),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 minimumSize: const Size(290, 50),
@@ -77,9 +74,10 @@ class LoginScreen extends StatelessWidget {
                   fontSize: 15,
                 ),
               )),
-          ],
+            ],
+          ),
         ),
-      ),
-    ));
+      )
+    );
   }
 }

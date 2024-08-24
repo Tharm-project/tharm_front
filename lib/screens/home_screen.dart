@@ -1,6 +1,8 @@
 import 'package:easy_rich_text/easy_rich_text.dart';
 import 'package:flutter/material.dart';
-import 'package:tharmproject/widgets/home-menu.dart';
+import 'package:get/get.dart';
+import 'package:tharmproject/widgets/homebtn.dart';
+import 'package:tharmproject/widgets/progresslist.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -9,6 +11,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: Colors.lightBlue,
         // backgroundColor: Colors.white,
         // title: const Text(
@@ -21,7 +24,6 @@ class HomeScreen extends StatelessWidget {
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        // crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
             alignment: Alignment.centerLeft,
@@ -76,9 +78,7 @@ class HomeScreen extends StatelessWidget {
                                       )),
                                   ],
                                 ),
-                                const SizedBox(
-                                  height: 5,
-                                ),
+                                const Padding(padding: EdgeInsets.only(top: 5)),
                                 const Text(
                                   '머시기 학습\n진행률',
                                   textAlign: TextAlign.center,
@@ -94,21 +94,18 @@ class HomeScreen extends StatelessWidget {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                const SizedBox(
-                                  height: 14,
-                                ),
-                                EasyRichText(
-                                  "안녕하세요!\n김수민 님",
-                                  defaultStyle: const TextStyle(fontSize: 18),
-                                  patternList: [
-                                    EasyRichTextPattern(
-                                      targetString: '김수민',
-                                      style: const TextStyle(
-                                        fontWeight: FontWeight.bold))
-                                  ],
-                                ),
-                                const SizedBox(
-                                  height: 7,
+                                Container(
+                                  padding: const EdgeInsets.fromLTRB(0, 14, 0, 7),
+                                  child: EasyRichText(
+                                    "안녕하세요!\n김수민 님",
+                                    defaultStyle: const TextStyle(fontSize: 18),
+                                    patternList: [
+                                      EasyRichTextPattern(
+                                        targetString: '김수민',
+                                        style: const TextStyle(
+                                          fontWeight: FontWeight.bold))
+                                    ],
+                                  ),
                                 ),
                                 const Text(
                                   '오늘도 저희와 같이\n수어를 배워볼까요?',
@@ -129,7 +126,6 @@ class HomeScreen extends StatelessWidget {
                       bottom: 0,
                       left: 90,
                       child: SizedBox(
-                        // width: 130,
                         height: 30,
                         child: TextButton(
                           style: TextButton.styleFrom(
@@ -164,73 +160,17 @@ class HomeScreen extends StatelessWidget {
                                               ),
                                             ),
                                             IconButton(
-                                              onPressed: (){}, 
+                                              onPressed: () {
+                                                Get.back();
+                                              },
                                               icon: const Icon(Icons.close_outlined)
                                             ),
                                           ],
                                         ),
-                                        Container(
-                                          padding: const EdgeInsets.only(top: 33),
-                                          child: Column(
-                                            children: [
-                                              Row(
-                                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                children: [
-                                                  const Text(
-                                                    '학습명',
-                                                    style: TextStyle(
-                                                      fontSize: 18,
-                                                    ),
-                                                  ),
-                                                  TextButton(
-                                                    onPressed: (){}, 
-                                                    style: TextButton.styleFrom(
-                                                      backgroundColor: const Color(0xff85B3F8),
-                                                      padding: const EdgeInsets.fromLTRB(13, 16, 13, 8),
-                                                    ),
-                                                    child: const SizedBox(
-                                                      width: 70,
-                                                      height: 30,
-                                                      child: Text(
-                                                        '학습하기',
-                                                        textAlign: TextAlign.center,
-                                                        style: TextStyle(
-                                                          color:Colors.white
-                                                        ),
-                                                      )
-                                                    )
-                                                  )
-                                                ],
-                                              ),
-                                              const Column(
-                                                children: [
-                                                  Align(
-                                                    alignment: Alignment.centerLeft,
-                                                    child: Text(
-                                                      '이얏호~~~',
-                                                      style: TextStyle(
-                                                        fontSize: 14,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                  Align(
-                                                    alignment: Alignment.centerRight, // 왼쪽 정렬
-                                                    child: Text(
-                                                      '99.9% 진행완료~!',
-                                                      style: TextStyle(
-                                                        fontSize: 10
-                                                      ),
-                                                    ),
-                                                  ),
-                                                  SizedBox(height: 6,),
-                                                  SizedBox(
-                                                    child: Image(image: AssetImage('assets/images/graph.png')),
-                                                  )
-                                                ],
-                                              )
-                                            ],
-                                          ),
-                                        )
+                                        const ProgressList(),
+                                        const ProgressList(),
+                                        const ProgressList(),
+                                        // const ProgressList(),
                                       ],
                                     ),
                                   ),
@@ -251,11 +191,8 @@ class HomeScreen extends StatelessWidget {
                   ],
                 ),
               ),
-
-              const SizedBox(
-                height: 45,
-              ),
-
+              
+              const Padding(padding: EdgeInsets.only(top: 45)),
               // 두번째 박스
               const SizedBox(
                 width: 235,

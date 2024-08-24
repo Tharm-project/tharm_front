@@ -1,23 +1,15 @@
-import 'package:easy_rich_text/easy_rich_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_state_manager/src/simple/get_controllers.dart';
-import 'package:tharmproject/widgets/home-menu.dart';
-
-class LearningController extends GetxController {
-  var isChecked = false.obs;
-
-  void toggleCheckbox(bool? value) {
-    isChecked.value = value ?? false;
-  }
-}
+import 'package:tharmproject/controller/buttonController.dart';
+import 'package:tharmproject/screens/detailed_screen.dart';
+import 'package:tharmproject/widgets/learninghistory.dart';
 
 class LearningScreen extends StatelessWidget {
   const LearningScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final LearningController controller = Get.put(LearningController());
+    final ButtonController controller = Get.put(ButtonController());
 
     return Scaffold(
       appBar: AppBar(
@@ -66,10 +58,7 @@ class LearningScreen extends StatelessWidget {
                               ),
                             ),
                           ),
-                          SizedBox(
-                            height: 13,
-                            // height: 20,
-                          ),
+                          Padding(padding: EdgeInsets.only(top: 13)),
                           Align(
                             alignment: Alignment.centerLeft,
                             child: Text(
@@ -98,9 +87,7 @@ class LearningScreen extends StatelessWidget {
                               ),
                             ),
                           ),
-                          SizedBox(
-                            height: 3,
-                          ),
+                          Padding(padding: EdgeInsets.only(top: 3)),
                           SizedBox(
                             // height: 15,
                             child: Image(
@@ -113,7 +100,7 @@ class LearningScreen extends StatelessWidget {
                         width: 70,
                         height: 30,
                         bottom: 0,
-                        left: 105,
+                        left: 110,
                         child: SizedBox(
                           height: 30,
                           child: TextButton(
@@ -121,7 +108,9 @@ class LearningScreen extends StatelessWidget {
                               minimumSize: Size.zero,
                               padding: EdgeInsets.zero,
                               backgroundColor: const Color(0xff85B3F8)),
-                          onPressed: () {},
+                          onPressed: () {
+                            Get.to(() => const DetailedScreen());
+                          },
                           child: const Text(
                             '학습 하기',
                             style: TextStyle(
@@ -136,7 +125,7 @@ class LearningScreen extends StatelessWidget {
 
               // border
               Container(
-                margin: const EdgeInsets.fromLTRB(0, 8, 0, 14),
+                margin: const EdgeInsets.fromLTRB(0, 9, 0, 0),
                 width: 283,
                 decoration: const BoxDecoration(
                   border: Border(bottom: BorderSide(color: Color(0xffD9D9D9)))
@@ -145,85 +134,88 @@ class LearningScreen extends StatelessWidget {
 
               // 두번째 박스
               SizedBox(
-                width: 290,
+                width: 283,
                 child: Center(
                   child: Column(
                     children: [
-                      Row(
+                      Container(
+                        padding: const EdgeInsets.fromLTRB(0, 5, 0, 15),
+                        // padding: EdgeInsets.fromLTRB(0, 5, 0, 15),
+                        child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          const Text(
-                            '전체 학습 내역',
-                            style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold
-                            ),
-                          ),
-                          IconButton(
-                            onPressed: () {},
-                            icon: const Icon(Icons.close_outlined)),
-                        ],
-                      ),
-                      SizedBox(
-                        // 대략
-                        width: 284,
-                        // 원래
-                        // width: 275,
-                        child: Column(
-                            children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                const Text(
-                                  '학습명',
-                                  style: TextStyle(
-                                    fontSize: 18,
-                                  ),
-                                ),
-                                Obx(() => Checkbox(
-                                  value: controller.isChecked.value,
-                                  onChanged: controller.toggleCheckbox,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius:
-                                      BorderRadius.circular(6),
-                                  ),
-                                  side: const BorderSide(
-                                    color: Color(0xffCACACA),
-                                    width: 1,
-                                  ),
-                                )),
-                              ],
-                            ),
-                            const Align(
-                              alignment: Alignment.centerLeft,
-                              child: Text(
-                                '머시기 머시기',
-                                style: TextStyle(
-                                  fontSize: 14,
-                                ),
+                          children: [
+                            const Text(
+                              '전체 학습 내역',
+                              style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold
                               ),
                             ),
-                            const Align(
-                              alignment: Alignment.centerRight,
-                              child: Text(
-                                '45% 진행완료!',
-                                style: TextStyle(
-                                  fontSize: 10,
-                                  color: Color(0xff4B4B4B),
-                                ),
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 3,
-                            ),
-                            const SizedBox(
-                              child: Image(
-                                image:
-                                  AssetImage('assets/images/graph.png')),
+                            SizedBox(
+                              width: 30, // 야매로 위치 조정 //원래 이거 아님
+                              child: IconButton(
+                                color: Colors.black,
+                                onPressed: () {
+                                  controller.toggleButtonVisibility();
+                                },
+                                icon: const Icon(Icons.settings)),
                             )
                           ],
                         ),
-                      )
+                      ),
+                      const Learninghistory(),
+                      const Learninghistory(),
+                      const Learninghistory(),
+                      // const Learninghistory(),
+                      Obx((){
+                        return Visibility(
+                          visible: controller.isButtonVisible.value,
+                          child: SizedBox(
+                          width: 170,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Column(
+                                children: [
+                                  IconButton(
+                                    icon: SizedBox(
+                                      width: 15,
+                                      child:Image.asset('assets/images/x.png'),
+                                    ),
+                                    onPressed: () {},
+                                  ),
+                                  const Text(
+                                    '취소',
+                                    style: TextStyle(
+                                      fontSize: 10,
+                                      color: Color(0xff7F7F7F),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Column(
+                                children: [
+                                  IconButton(
+                                    icon: SizedBox(
+                                      width: 15,
+                                      child: Image.asset('assets/images/del.png'),
+                                    ),
+                                    onPressed: (){},
+                                  ),
+                                  const Text(
+                                    '삭제',
+                                    style: TextStyle(
+                                      fontSize: 10,
+                                      color: Color(0xffFC0005)
+                                    ),
+                                  ),
+                                ],
+                              )
+                            ],
+                          ),
+                        )
+                        );
+                      })
                     ],
                   ),
                 ),

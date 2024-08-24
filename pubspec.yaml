@@ -75,6 +75,8 @@ flutter:
    - assets/images/banner1.png
    - assets/images/banner2.png
    - assets/images/graph.png
+   - assets/images/x.png
+   - assets/images/del.png
 
 
    - assets/data/home-btn-data.json
