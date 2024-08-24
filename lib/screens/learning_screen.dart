@@ -182,7 +182,9 @@ class LearningScreen extends StatelessWidget {
                                       width: 15,
                                       child:Image.asset('assets/images/x.png'),
                                     ),
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      controller.toggleButtonVisibility();
+                                    },
                                   ),
                                   const Text(
                                     '취소',
