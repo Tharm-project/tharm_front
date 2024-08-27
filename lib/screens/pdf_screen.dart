@@ -8,6 +8,7 @@ class PdfScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: Colors.lightBlue,
       ),
       body: Padding(
@@ -58,7 +59,7 @@ class PdfScreen extends StatelessWidget {
                   width: 100,
                   height: 40,
                   child: TextButton(
-                    onPressed: () {},
+                    onPressed: () {Get.back();},
                     style: TextButton.styleFrom(
                         backgroundColor: const Color(0xffD9D9D9),
                         shape: RoundedRectangleBorder(
