@@ -78,6 +78,8 @@ flutter:
    - assets/images/x.png
    - assets/images/del.png
    - assets/images/nemo.png
+   - assets/images/Drag.png
+   - assets/images/PDF.png
 
 
    - assets/data/home-btn-data.json

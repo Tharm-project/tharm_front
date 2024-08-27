@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:tharmproject/screens/home_screen.dart';
 import 'package:tharmproject/screens/learning_screen.dart';
 import 'package:tharmproject/screens/login_screen.dart';
+import 'package:tharmproject/screens/pdf_screen.dart';
 import 'package:tharmproject/screens/translation_screen.dart';
 import 'firebase_options.dart';
 
@@ -29,11 +30,12 @@ class MyApp extends StatelessWidget {
           // colorScheme: ColorScheme.fromSeed(
           //     seedColor: const Color.fromARGB(255, 192, 145, 145)),
           // useMaterial3: true,
-          ),
-      // home: const LoginScreen(),
+      ),
+      home: const LoginScreen(),
       // home: const HomeScreen(),
       // home: const LearningScreen(),
-      home: const TranslationScreen(),
+      // home: const TranslationScreen(),
+      // home: const PdfScreen(),
     );
   }
 }
