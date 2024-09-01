@@ -12,8 +12,8 @@ class Learninghistory extends StatelessWidget {
     final ButtonController buttoncontroller = Get.put(ButtonController());
     final CheckboxController checkcontroller = Get.put(CheckboxController());
 
-    return SizedBox(
-      width: 270,
+    return Container(
+      padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
       child: Column(
         children: [
           Row(
@@ -72,12 +72,10 @@ class Learninghistory extends StatelessWidget {
             child: Image(image: AssetImage('assets/images/graph.png')),
           ),
           Container(
-            margin: const EdgeInsets.fromLTRB(0, 16, 0, 14),
-            // margin: const EdgeInsets.fromLTRB(0, 18, 0, 16),
+            margin: const EdgeInsets.fromLTRB(0, 17, 0, 15),
             decoration: const BoxDecoration(
               border: Border(
-                bottom:
-                    BorderSide(color: Color.fromARGB(255, 237, 237, 237)))),
+                bottom: BorderSide(color: Color.fromARGB(255, 237, 237, 237)))),
             // bottom: BorderSide(color: Color(0xfff2f2f2)))), // 원래
           ),
         ],

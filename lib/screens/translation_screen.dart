@@ -11,8 +11,7 @@ class TranslationScreen extends StatelessWidget {
         backgroundColor: Colors.lightBlue,
       ),
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(30, 60, 30, 0),
-        // padding: EdgeInsets.fromLTRB(12, 60, 12, 0), // 원래
+        padding: const EdgeInsets.fromLTRB(12, 60, 12, 0),
         child: Column(
           children: [
             const Align(

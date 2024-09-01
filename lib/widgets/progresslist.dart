@@ -8,7 +8,7 @@ class ProgressList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.only(top: 33),
+      padding: const EdgeInsets.fromLTRB(1, 33, 0, 0),
       child: Column(
         children: [
           Row(
