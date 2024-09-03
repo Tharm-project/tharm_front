@@ -24,17 +24,17 @@ class ProgressList extends StatelessWidget {
                 width: 70,
                 height: 32, // 원래 30
                 child: TextButton(
-                  onPressed: () {
-                    Get.to(() => const DetailedScreen());
-                  },
-                  style: TextButton.styleFrom(
-                    backgroundColor: const Color(0xff85B3F8),
-                  ),
-                  child: const Text(
-                    '학습하기',
-                    // textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 12, color: Colors.white),
-                  )),
+                    onPressed: () {
+                      Get.to(() => const DetailedScreen());
+                    },
+                    style: TextButton.styleFrom(
+                      backgroundColor: const Color(0xff85B3F8),
+                    ),
+                    child: const Text(
+                      '학습하기',
+                      // textAlign: TextAlign.center,
+                      style: TextStyle(fontSize: 12, color: Colors.white),
+                    )),
               )
             ],
           ),
@@ -58,8 +58,6 @@ class ProgressList extends StatelessWidget {
               ),
               Padding(padding: EdgeInsets.only(top: 6)),
               SizedBox(
-                // width: 277, // 원래
-                // height: 15, // 원래
                 child: Image(image: AssetImage('assets/images/graph.png')),
               )
             ],

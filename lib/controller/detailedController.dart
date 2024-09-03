@@ -1,4 +1,3 @@
-// import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class DetailedController extends GetxController {
@@ -12,7 +11,7 @@ class DetailedController extends GetxController {
   void _splitTextIntoSegments() {
     // 텍스트를 마침표를 기준으로 나누기
     List<String> segments =
-        text.split('.').map((segment) => segment.trim()).toList();
+      text.split('.').map((segment) => segment.trim()).toList();
     // 빈 문자열 제거
     segments.removeWhere((segment) => segment.isEmpty);
     buttonSegments.assignAll(segments);
