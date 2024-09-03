@@ -6,27 +6,47 @@
         "name" : "최성윤",
         "email" : "1234@asdf",
         "password" : "qwer12",
-        "phone" : "010-1111-1111",
+        "phone" : "010-1101-1111",
         "create_at" : "2024-09-02"
     },
     {
         "uid" : "2",
         "title" : "2wsx",
-        "description" : "asdfghjkl"
+        "description" : "asdfghjkl",
+        "name" : "000",
+        "email" : "0000@0000.00",
+        "password" : "qwer12",
+        "phone" : "010-1101-1111",
+        "create_at" : "2024-09-02"
     },
     {
         "uid" : "3",
         "title" : "3edc",
-        "description" : "zxcvbnm"
+        "description" : "zxcvbnm",
+        "name" : "최성윤",
+        "email" : "1234@asdf",
+        "password" : "qwer12",
+        "phone" : "010-1101-1111",
+        "create_at" : "2024-09-02"
     },
     {
         "uid" : "4",
         "title" : "4rfv",
-        "description" : "1234567890"
+        "description" : "1234567890",
+        "name" : "최성윤",
+        "email" : "1234@asdf",
+        "password" : "qwer12",
+        "phone" : "010-1101-1111",
+        "create_at" : "2024-09-02"
     },
     {
         "uid" : "5",
         "title" : "5tgb",
-        "description" : "ddddddddddddddd"
+        "description" : "ddddddddddddddd",
+        "name" : "최성윤",
+        "email" : "1234@asdf",
+        "password" : "qwer12",
+        "phone" : "010-1101-1111",
+        "create_at" : "2024-09-02"
     }
 ]
