@@ -3,6 +3,9 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+// https://medium.com/@thecodingpapa/json-flutter-61815c214eb8
+// https://devocean.sk.com/blog/techBoardDetail.do?ID=163532
+
 class TestTestController extends GetxController {
   void main() {
     var List_data = [
