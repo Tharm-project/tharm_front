@@ -101,7 +101,7 @@ class LearningScreen extends StatelessWidget {
                           width: 70,
                           height: 30,
                           bottom: 0,
-                          left: 140,
+                          left: 150,
                           child: SizedBox(
                             height: 30,
                             child: TextButton(
@@ -161,9 +161,12 @@ class LearningScreen extends StatelessWidget {
                             ],
                           ),
                         ),
-                        const Learninghistory(),
-                        const Learninghistory(),
-                        const Learninghistory(),
+                        // const Learninghistory(),
+                        // const Learninghistory(),
+                        // const Learninghistory(),
+                        const Learninghistory(index: 0),
+                        const Learninghistory(index: 1),
+                        const Learninghistory(index: 2),
                         Obx((){
                           return Visibility(
                             visible: controller.isButtonVisible.value,

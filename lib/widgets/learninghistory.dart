@@ -4,8 +4,10 @@ import 'package:tharmproject/controller/buttonController.dart';
 import 'package:tharmproject/controller/checkboxcheckboxController.dart';
 
 class Learninghistory extends StatelessWidget {
+  final int index; // index 값을 추가
 
-  const Learninghistory({super.key});
+  const Learninghistory({super.key, required this.index});
+  // const Learninghistory({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -32,8 +34,14 @@ class Learninghistory extends StatelessWidget {
                     width: 15,
                     height: 15,
                     child: Obx(() => Checkbox(
-                        value: checkcontroller.isChecked.value,
-                        onChanged: checkcontroller.toggleCheckbox,
+                        // value: checkcontroller.isChecked.value,
+                        // onChanged: checkcontroller.toggleCheckbox,
+                        value: index == 0 ? checkcontroller.firstCheck.value : 
+                               index == 1 ? checkcontroller.secondCheck.value :
+                                           checkcontroller.thirdCheck.value,
+                        onChanged: (value) {
+                          checkcontroller.toggleCheckbox(index); // index에 따라 선택
+                        },
                         activeColor: const Color(0xffFF0000),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(6),

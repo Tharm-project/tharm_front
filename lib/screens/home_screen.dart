@@ -127,7 +127,7 @@ class HomeScreen extends StatelessWidget {
                         width: 110,
                         height: 30,
                         bottom: 0,
-                        left: 120,
+                        left: 130,
                         child: SizedBox(
                           height: 30,
                           child: TextButton(

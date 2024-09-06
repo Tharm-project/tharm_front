@@ -30,7 +30,6 @@ class TestTestController extends GetxController {
     var dev_o = jsonDecode(jsonData);
     var first = dev_o[0];
     var second = dev_o[1];
-
   }
 }
 
@@ -40,6 +39,10 @@ class TestTest extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column();
+    return const Column(
+      children: [
+        Text('')
+      ],
+    );
   }
 }
