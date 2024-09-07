@@ -142,11 +142,11 @@ class LearningScreen extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Learninghistory(),
-                  Learninghistory(),
-                  Learninghistory(),
-                  Learninghistory(),
-                  Learninghistory(),
+                  const Learninghistory(index: 0),
+                  const Learninghistory(index: 1),
+                  const Learninghistory(index: 2),
+                  // const Learninghistory(),
+                  // const Learninghistory(),
                   SizedBox(
                     width: 170,
                     child: Row(
