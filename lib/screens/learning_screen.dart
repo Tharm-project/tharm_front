@@ -4,12 +4,17 @@ import 'package:tharmproject/controller/buttonController.dart';
 import 'package:tharmproject/screens/detailed_screen.dart';
 import 'package:tharmproject/widgets/learninghistory.dart';
 
+// class RemoveController extends GetxController {
+  
+// }
+
 class LearningScreen extends StatelessWidget {
   const LearningScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     final ButtonController controller = Get.put(ButtonController());
+    // final RemoveController removecontroller = Get.put(RemoveController());
 
     return Scaffold(
       appBar: AppBar(
@@ -161,9 +166,6 @@ class LearningScreen extends StatelessWidget {
                             ],
                           ),
                         ),
-                        // const Learninghistory(),
-                        // const Learninghistory(),
-                        // const Learninghistory(),
                         const Learninghistory(index: 0),
                         const Learninghistory(index: 1),
                         const Learninghistory(index: 2),

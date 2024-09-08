@@ -22,6 +22,7 @@ class CheckboxController extends GetxController {
       thirdCheck.value = true;
     }
   }
+  
 }
 
 // class CheckboxController extends GetxController {

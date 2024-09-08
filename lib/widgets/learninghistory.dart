@@ -30,7 +30,6 @@ class Learninghistory extends StatelessWidget {
   final int index; // index 값을 추가
 
   const Learninghistory({super.key, required this.index});
-  // const Learninghistory({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -54,30 +53,28 @@ class Learninghistory extends StatelessWidget {
               }),
               Obx(() {
                 return Visibility(
-                    visible: buttoncontroller.isButtonVisible.value,
-                    child: SizedBox(
-                      width: 15,
-                      height: 15,
-                      child: Obx(() => Checkbox(
-                          value: index == 0
-                              ? checkcontroller.firstCheck.value
-                              : index == 1
-                                  ? checkcontroller.secondCheck.value
-                                  : checkcontroller.thirdCheck.value,
-                          onChanged: (value) {
-                            checkcontroller
-                                .toggleCheckbox(index); // index에 따라 선택
-                          },
-                          activeColor: const Color(0xffFF0000),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(6),
-                          ),
-                          side: const BorderSide(
-                            color: Color(0xffCACACA),
-                            width: 1,
-                          ),
-                        )),
-                    ));
+                  visible: buttoncontroller.isButtonVisible.value,
+                  child: SizedBox(
+                    width: 15,
+                    height: 15,
+                    child: Obx(() => Checkbox(
+                        value: index == 0 ? checkcontroller.firstCheck.value
+                            : index == 1 ? checkcontroller.secondCheck.value
+                                : checkcontroller.thirdCheck.value,
+                        onChanged: (value) {
+                          checkcontroller.toggleCheckbox(index); // index에 따라 선택
+                        },
+                        activeColor: const Color(0xffFF0000),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(6),
+                        ),
+                        side: const BorderSide(
+                          color: Color(0xffCACACA),
+                          width: 1,
+                        ),
+                      )),
+                  )
+                );
               })
             ],
           ),

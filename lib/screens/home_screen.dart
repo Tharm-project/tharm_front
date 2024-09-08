@@ -153,9 +153,7 @@ class HomeScreen extends StatelessWidget {
                                       child: Column(
                                         children: [
                                           Row(
-                                            mainAxisAlignment:
-                                              MainAxisAlignment
-                                                  .spaceBetween,
+                                            mainAxisAlignment:MainAxisAlignment.spaceBetween,
                                             children: [
                                               const Text(
                                                 '진행중인 학습 목록',
