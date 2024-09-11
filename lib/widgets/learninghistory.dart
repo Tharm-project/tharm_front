@@ -1,30 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:tharmproject/controller/buttonController.dart';
-import 'package:tharmproject/controller/checkboxcheckboxController.dart';
-
-class DataController extends GetxController {
-  var itemList = [
-    {
-      "name": "2024-09-06",
-      "summery": "진자로 정말로 왜그러지?",
-      "status": 10,
-      "progress": "25% 진행완료!",
-    },
-    {
-      "name": "결혼행진곡",
-      "summery": "집가고싶당 이요힛~",
-      "status": 10,
-      "progress": "50% 진행완료!",
-    },
-    {
-      "name": "응애",
-      "summery": "않되~~~~~~~~~~~~~",
-      "status": 10,
-      "progress": "75% 진행완료!",
-    },
-  ].obs;
-}
+import 'package:tharmproject/controller/checkboxController.dart';
 
 class Learninghistory extends StatelessWidget {
   final int index; // index 값을 추가
@@ -33,10 +9,37 @@ class Learninghistory extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final ButtonController buttoncontroller = Get.put(ButtonController());
-    final CheckboxController checkcontroller = Get.put(CheckboxController());
-    final DataController datacontroller = Get.put(DataController());
+    final CheckboxController controller = Get.put(CheckboxController());
 
+// return Container(
+//   child: Column(children: [
+
+//      Obx(() {
+//                 return Visibility(
+//                   visible: controller.isButtonVisible.value,
+//                   child: SizedBox(
+//                     width: 15,
+//                     height: 15,
+//                     child: Obx(() => Checkbox(
+//                         value: controller.selectIndexList.contains(index) ? true : false ,
+//                         onChanged: (value) {
+//                           controller.toggleCheckbox(index); // index에 따라 선택
+//                         },
+//                         activeColor: const Color(0xffFF0000),
+//                         shape: RoundedRectangleBorder(
+//                           borderRadius: BorderRadius.circular(6),
+//                         ),
+//                         side: const BorderSide(
+//                           color: Color(0xffCACACA),
+//                           width: 1,
+//                         ),
+//                       )),
+//                   )
+//                 );
+//               })
+//             ],
+//           ),
+// );
     return Container(
       padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
       child: Column(
@@ -45,7 +48,8 @@ class Learninghistory extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Obx(() {
-                return Text(datacontroller.itemList[index]['name'].toString(),
+                return Text(
+                  controller.itemList[index]['name'].toString(),
                   style: const TextStyle(
                     fontSize: 18
                   ),
@@ -53,16 +57,14 @@ class Learninghistory extends StatelessWidget {
               }),
               Obx(() {
                 return Visibility(
-                  visible: buttoncontroller.isButtonVisible.value,
+                  visible: controller.isButtonVisible.value,
                   child: SizedBox(
                     width: 15,
                     height: 15,
                     child: Obx(() => Checkbox(
-                        value: index == 0 ? checkcontroller.firstCheck.value
-                            : index == 1 ? checkcontroller.secondCheck.value
-                                : checkcontroller.thirdCheck.value,
+                        value: controller.selectIndexList.contains(index) ? true : false ,
                         onChanged: (value) {
-                          checkcontroller.toggleCheckbox(index); // index에 따라 선택
+                          controller.toggleCheckbox(index); // index에 따라 선택
                         },
                         activeColor: const Color(0xffFF0000),
                         shape: RoundedRectangleBorder(
@@ -81,7 +83,7 @@ class Learninghistory extends StatelessWidget {
           Obx(() {
             return Align(
               alignment: Alignment.centerLeft,
-              child: Text(datacontroller.itemList[index]['summery'].toString(),
+              child: Text(controller.itemList[index]['summery'].toString(),
                 style: const TextStyle(
                   fontSize: 14,
                 ),
@@ -91,7 +93,7 @@ class Learninghistory extends StatelessWidget {
           Obx(() {
             return Align(
               alignment: Alignment.centerRight,
-              child: Text(datacontroller.itemList[index]['progress'].toString(),
+              child: Text(controller.itemList[index]['progress'].toString(),
                 style: const TextStyle(
                   fontSize: 10,
                 ),
