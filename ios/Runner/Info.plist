@@ -2,6 +2,24 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>갤러리 권한추가</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>사진, 동영상 기능을 사용하기 위해 접근하도록 권한을 허용합니다</string>
+	
+	<key>NSCameraUsageDescription</key>
+	<string>We need access to the camera to allow video playback</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>We need access to the microphone for recording audio</string>
+
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+
+
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
