@@ -4,6 +4,7 @@ import 'package:tharmproject/controller/checkboxController.dart';
 import 'package:tharmproject/screens/detailed_screen.dart';
 import 'package:tharmproject/widgets/learninghistory.dart';
 
+// 학습 탭
 class LearningScreen extends StatelessWidget {
   const LearningScreen({super.key});
 
@@ -94,9 +95,8 @@ class LearningScreen extends StatelessWidget {
                                         AssetImage('assets/images/graph.png')),
                               )
                             ],
-                          )
-                        ),
-                        Positioned(
+                          )),
+                      Positioned(
                           width: 70,
                           height: 30,
                           bottom: 0,
@@ -117,8 +117,7 @@ class LearningScreen extends StatelessWidget {
                                     fontSize: 12, color: Colors.white),
                               ),
                             ),
-                          )
-                        ),
+                          )),
                     ],
                   ),
                 ),
@@ -134,95 +133,96 @@ class LearningScreen extends StatelessWidget {
           ),
 
           // 전체 학습 내역을 스크롤 가능하도록 `Expanded`로 감싸기
+          // 전체 학습 내역을 스크롤 가능하도록 `Expanded`로 감싸기
           Expanded(
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  Container(
-                    // width: 250,
-                    padding: const EdgeInsets.fromLTRB(20, 5, 20, 15),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        const Text(
-                          '전체 학습 내역',
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                          ),
+            child: Column(
+              children: [
+                Container(
+                  padding: const EdgeInsets.fromLTRB(20, 5, 20, 15),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const Text(
+                        '전체 학습 내역',
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
                         ),
-                        SizedBox(
-                          width: 30, // 야매로 위치 조정 //원래 이거 아님
-                          child: IconButton(
-                              color: Colors.black,
-                              onPressed: () {
-                                controller.toggleButtonVisibility();
-                              },
-                              icon: const Icon(Icons.settings)),
-                        )
-                      ],
-                    ),
+                      ),
+                      SizedBox(
+                        width: 30, // 야매로 위치 조정
+                        child: IconButton(
+                          color: Colors.black,
+                          onPressed: () {
+                            controller.toggleButtonVisibility();
+                          },
+                          icon: const Icon(Icons.settings),
+                        ),
+                      )
+                    ],
                   ),
-                  GetBuilder<CheckboxController>(builder: (c) {
+                ),
+                Expanded(
+                  child: GetBuilder<CheckboxController>(builder: (c) {
                     return ListView.builder(
-                      shrinkWrap: true,
                       itemCount: c.itemList.length,
                       itemBuilder: (context, index) {
                         return Learninghistory(index: index);
                       },
                     );
                   }),
-                  Obx(() {
-                    return Visibility(
-                        visible: controller.isButtonVisible.value,
-                        child: SizedBox(
-                          width: 170,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Column(
-                                children: [
-                                  IconButton(
-                                    icon: SizedBox(
-                                      width: 15,
-                                      child: Image.asset('assets/images/x.png'),
-                                    ),
-                                    onPressed: () {
-                                      controller.toggleButtonVisibility();
-                                    },
+                ),
+                Obx(() {
+                  return Visibility(
+                      visible: controller.isButtonVisible.value,
+                      child: SizedBox(
+                        width: 170,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Column(
+                              children: [
+                                IconButton(
+                                  icon: SizedBox(
+                                    width: 15,
+                                    child: Image.asset('assets/images/x.png'),
                                   ),
-                                  const Text(
-                                    '취소',
-                                    style: TextStyle(
-                                      fontSize: 10,
-                                      color: Color(0xff7F7F7F),
-                                    ),
+                                  onPressed: () {
+                                    controller.toggleButtonVisibility();
+                                  },
+                                ),
+                                const Text(
+                                  '취소',
+                                  style: TextStyle(
+                                    fontSize: 10,
+                                    color: Color(0xff7F7F7F),
                                   ),
-                                ],
-                              ),
-                              Column(
-                                children: [
-                                  IconButton(
-                                    icon: SizedBox(
-                                      width: 15,
-                                      child:
-                                          Image.asset('assets/images/del.png'),
-                                    ),
-                                    onPressed: controller.del,
+                                ),
+                              ],
+                            ),
+                            Column(
+                              children: [
+                                IconButton(
+                                  icon: SizedBox(
+                                    width: 15,
+                                    child: Image.asset('assets/images/del.png'),
                                   ),
-                                  const Text(
-                                    '삭제',
-                                    style: TextStyle(
-                                        fontSize: 10, color: Color(0xffFC0005)),
-                                  ),
-                                ],
-                              )
-                            ],
-                          ),
-                        ));
-                  })
-                ],
-              ),
+                                  onPressed: controller.del,
+                                ),
+                                const Text(
+                                  '삭제',
+                                  style: TextStyle(
+                                      fontSize: 10, color: Color(0xffFC0005)),
+                                ),
+                              ],
+                            )
+                          ],
+                        ),
+                      )
+                    );
+                  }
+                )
+              ],
             ),
           ),
         ],

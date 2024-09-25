@@ -12,6 +12,24 @@ class CheckboxController extends GetxController {
       "progress": "25% 진행완료!",
     },
     {
+      "name": "2024-09-06",
+      "summery": "진자로 정말로 왜그러지?",
+      "status": 10,
+      "progress": "25% 진행완료!",
+    },
+    {
+      "name": "결혼행진곡",
+      "summery": "집가고싶당 이요힛~",
+      "status": 10,
+      "progress": "50% 진행완료!",
+    },
+    {
+      "name": "응애",
+      "summery": "않되~~~~~~~~~~~~~",
+      "status": 10,
+      "progress": "75% 진행완료!",
+    },
+    {
       "name": "결혼행진곡",
       "summery": "집가고싶당 이요힛~",
       "status": 10,
