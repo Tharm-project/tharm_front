@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+// 수어 번역
 class TranslationScreen extends StatelessWidget {
   const TranslationScreen({super.key});
 

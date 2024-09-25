@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:video_player/video_player.dart';
 
+// 수어 번역
 class VideoPlayerViewController extends GetxController {
   late VideoPlayerController videoController;
   Duration position = Duration.zero;

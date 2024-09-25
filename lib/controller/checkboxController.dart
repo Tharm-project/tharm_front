@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 
+
 class CheckboxController extends GetxController {
   final RxBool isButtonVisible = RxBool(false);
   final RxList<int> selectIndexList = RxList([]);

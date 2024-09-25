@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:get/get.dart';
-import 'package:tharmproject/screens/home_screen.dart';
+// import 'package:tharmproject/screens/home_screen.dart';
 import 'package:tharmproject/screens/learning_screen.dart';
-import 'package:tharmproject/screens/login_screen.dart';
-import 'package:tharmproject/json_test.dart';
+// import 'package:tharmproject/screens/login_screen.dart';
+// import 'package:tharmproject/json_test.dart';
 import 'package:tharmproject/screens/video_player_view.dart';
 import 'firebase_options.dart';
 

@@ -4,6 +4,7 @@ import 'package:tharmproject/controller/checkboxController.dart';
 import 'package:tharmproject/screens/detailed_screen.dart';
 import 'package:tharmproject/widgets/learninghistory.dart';
 
+// 학습 탭
 class LearningScreen extends StatelessWidget {
   const LearningScreen({super.key});
 

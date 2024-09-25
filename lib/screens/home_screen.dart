@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:tharmproject/widgets/homebtn.dart';
 import 'package:tharmproject/widgets/progresslist.dart';
 
+// 홈 탭
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
@@ -248,7 +249,7 @@ class TharmGradientBox extends StatelessWidget {
           ),
           if (isStackBtn == true)
             Positioned(
-                width: 110,
+              width: 110,
                 height: 30,
                 bottom: 0,
                 left: 130,
@@ -260,8 +261,8 @@ class TharmGradientBox extends StatelessWidget {
                         padding: EdgeInsets.zero,
                         backgroundColor: const Color(0xff85B3F8)),
                     onPressed: onPressed,
-                    child:  Text(
-                     btnTitle?? '',
+                    child: Text(
+                      btnTitle ?? '',
                       style: const TextStyle(fontSize: 11, color: Colors.white),
                     ),
                   ),
