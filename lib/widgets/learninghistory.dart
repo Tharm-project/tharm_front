@@ -41,7 +41,7 @@ class Learninghistory extends StatelessWidget {
 //           ),
 // );
     return Container(
-      padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
+      padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
       child: Column(
         children: [
           Row(

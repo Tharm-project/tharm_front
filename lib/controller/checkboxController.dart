@@ -23,6 +23,12 @@ class CheckboxController extends GetxController {
       "status": 10,
       "progress": "75% 진행완료!",
     },
+    {
+      "name": "응애",
+      "summery": "않되~~~~~~~~~~~~~",
+      "status": 10,
+      "progress": "75% 진행완료!",
+    },
   ].obs;
 
   void toggleButtonVisibility() {
