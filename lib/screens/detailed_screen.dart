@@ -83,8 +83,12 @@ class DetailedScreen extends StatelessWidget {
                                                 borderRadius: BorderRadius.circular(10),
                                               )
                                           ),
-                                          onPressed: () {
-                                            Get.to(() => const TranslationScreen());
+                                          // onPressed: () {
+                                          //   Get.to(() => const TranslationScreen());
+                                          // },
+                                          onPressed: () => {
+                                            // Get.toNamed('/detail/video') //수어 번역
+                                            Get.toNamed('/show/video') //동영상 재생 스크린
                                           },
                                           child: const Text(
                                             '번역하기',

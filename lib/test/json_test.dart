@@ -1,201 +1,201 @@
-// import 'dart:convert';
+// // import 'dart:convert';
 
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:tharmproject/controller/testController.dart';
-// import 'package:tharmproject/main.dart';
+// import 'package:flutter/material.dart';
+// import 'package:get/get.dart';
+// import 'package:tharmproject/controller/testController.dart';
+// // import 'package:tharmproject/main.dart';
 
-class Test1234 extends StatefulWidget {
-  const Test1234({super.key});
+// class Test1234 extends StatefulWidget {
+//   const Test1234({super.key});
 
-  @override
-  _Test1234State createState() => _Test1234State();
-}
+//   @override
+//   _Test1234State createState() => _Test1234State();
+// }
 
-class _Test1234State extends State<Test1234> {
-  final TestController controller = Get.put(TestController());
+// class _Test1234State extends State<Test1234> {
+//   final TestController controller = Get.put(TestController());
 
-  @override
-  void initState() {
-    super.initState();
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      // Context를 사용하여 JSON 파일을 로드
-      controller.loadJsonFile(context);
-    });
-  }
+//   @override
+//   void initState() {
+//     super.initState();
+//     WidgetsBinding.instance.addPostFrameCallback((_) {
+//       // Context를 사용하여 JSON 파일을 로드
+//       controller.loadJsonFile(context);
+//     });
+//   }
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Test1234 Screen 123'),
-      ),
-      body: Obx(
-        () {
-          if (controller.list.isEmpty) {
-            return const Center(
-              child: CircularProgressIndicator(),
-            );
-          } else {
-            return SingleChildScrollView(
-              child: Column(
-                children: List.generate(controller.list.length, (index) {
-                  var post =
-                      controller.list[index].map<String, String>((key, value) {
-                    return MapEntry(key.toString(), value.toString());
-                  });
-                  return PoWidget(
-                    uid: post['uid'] ?? 'No UID',
-                    title: post['title'] ?? 'No Title',
-                    description: post['description'] ?? 'No Description',
-                    id: post['id'] ?? 'id',
-                    name: post['name'] ?? 'name',
-                    email: post['email'] ?? 'email',
-                    password: post['password'] ?? 'password',
-                    phone: post['phone'] ?? 'phone',
-                    create_at: post['create_at'] ?? 'create_at',
-                  );
-                }),
-              ),
-            );
-          }
-        },
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: const Text('Test1234 Screen 123'),
+//       ),
+//       body: Obx(
+//         () {
+//           if (controller.list.isEmpty) {
+//             return const Center(
+//               child: CircularProgressIndicator(),
+//             );
+//           } else {
+//             return SingleChildScrollView(
+//               child: Column(
+//                 children: List.generate(controller.list.length, (index) {
+//                   var post =
+//                       controller.list[index].map<String, String>((key, value) {
+//                     return MapEntry(key.toString(), value.toString());
+//                   });
+//                   return PoWidget(
+//                     uid: post['uid'] ?? 'No UID',
+//                     title: post['title'] ?? 'No Title',
+//                     description: post['description'] ?? 'No Description',
+//                     id: post['id'] ?? 'id',
+//                     name: post['name'] ?? 'name',
+//                     email: post['email'] ?? 'email',
+//                     password: post['password'] ?? 'password',
+//                     phone: post['phone'] ?? 'phone',
+//                     create_at: post['create_at'] ?? 'create_at',
+//                   );
+//                 }),
+//               ),
+//             );
+//           }
+//         },
+//       ),
+//     );
+//   }
+// }
 
-class PoWidget extends StatelessWidget {
-  final String uid;
-  final String title;
-  final String description;
-  final String id;
-  final String name;
-  final String email;
-  final String password;
-  final String phone;
-  final String create_at;
+// class PoWidget extends StatelessWidget {
+//   final String uid;
+//   final String title;
+//   final String description;
+//   final String id;
+//   final String name;
+//   final String email;
+//   final String password;
+//   final String phone;
+//   final String create_at;
 
-  const PoWidget({
-    required this.uid,
-    required this.title,
-    required this.description,
-    required this.id,
-    required this.name,
-    required this.email,
-    required this.password,
-    required this.phone,
-    required this.create_at,
-  });
+//   const PoWidget({
+//     required this.uid,
+//     required this.title,
+//     required this.description,
+//     required this.id,
+//     required this.name,
+//     required this.email,
+//     required this.password,
+//     required this.phone,
+//     required this.create_at,
+//   });
 
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Padding(
-            padding:
-                const EdgeInsets.only(top: 10, bottom: 20, left: 10, right: 10),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Text(
-                  title,
-                  style: const TextStyle(
-                      fontSize: 15, fontWeight: FontWeight.bold),
-                ),
-                Text(
-                  description,
-                  style: const TextStyle(
-                    fontSize: 12,
-                  ),
-                ),
-                Text(
-                  name,
-                  style: const TextStyle(
-                    fontSize: 12,
-                  ),
-                ),
-                Text(
-                  email,
-                  style: const TextStyle(
-                    fontSize: 12,
-                  ),
-                ),
-                Text(
-                  password,
-                  style: const TextStyle(
-                    fontSize: 12,
-                  ),
-                ),
-                Text(
-                  phone,
-                  style: const TextStyle(
-                    fontSize: 12,
-                  ),
-                ),
-                Text(
-                  create_at,
-                  style: const TextStyle(
-                    fontSize: 12,
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return GestureDetector(
+//       child: Column(
+//         crossAxisAlignment: CrossAxisAlignment.stretch,
+//         children: [
+//           Padding(
+//             padding:
+//                 const EdgeInsets.only(top: 10, bottom: 20, left: 10, right: 10),
+//             child: Column(
+//               crossAxisAlignment: CrossAxisAlignment.stretch,
+//               children: [
+//                 Text(
+//                   title,
+//                   style: const TextStyle(
+//                       fontSize: 15, fontWeight: FontWeight.bold),
+//                 ),
+//                 Text(
+//                   description,
+//                   style: const TextStyle(
+//                     fontSize: 12,
+//                   ),
+//                 ),
+//                 Text(
+//                   name,
+//                   style: const TextStyle(
+//                     fontSize: 12,
+//                   ),
+//                 ),
+//                 Text(
+//                   email,
+//                   style: const TextStyle(
+//                     fontSize: 12,
+//                   ),
+//                 ),
+//                 Text(
+//                   password,
+//                   style: const TextStyle(
+//                     fontSize: 12,
+//                   ),
+//                 ),
+//                 Text(
+//                   phone,
+//                   style: const TextStyle(
+//                     fontSize: 12,
+//                   ),
+//                 ),
+//                 Text(
+//                   create_at,
+//                   style: const TextStyle(
+//                     fontSize: 12,
+//                   ),
+//                 ),
+//               ],
+//             ),
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+// }
 
-class TextAnimation extends GetxController {
-  Map<String, String?>? post;
+// class TextAnimation extends GetxController {
+//   Map<String, String?>? post;
 
-  @override
-  void onInit() {
-    super.onInit();
-    _loadData();
-  }
+//   @override
+//   void onInit() {
+//     super.onInit();
+//     _loadData();
+//   }
 
-  void _loadData() {
-    post = Get.parameters;
-  }
-}
+//   void _loadData() {
+//     post = Get.parameters;
+//   }
+// }
 
-class PostDetailView extends GetView<TextAnimation> {
-  const PostDetailView();
+// class PostDetailView extends GetView<TextAnimation> {
+//   const PostDetailView();
 
-  @override
-  Widget build(BuildContext context) {
-    final post = controller.post;
-    if (post == null) {
-      return Scaffold(
-        appBar: AppBar(
-          title: const Text('Post Detail'),
-        ),
-        body: const Center(
-          child: Text('No post data available'),
-        ),
-      );
-    }
+//   @override
+//   Widget build(BuildContext context) {
+//     final post = controller.post;
+//     if (post == null) {
+//       return Scaffold(
+//         appBar: AppBar(
+//           title: const Text('Post Detail'),
+//         ),
+//         body: const Center(
+//           child: Text('No post data available'),
+//         ),
+//       );
+//     }
 
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(post['title'] ?? 'No Title'),
-      ),
-      body: Column(
-        children: [
-          if (post['thumbnail'] != null) Image.asset(post['thumbnail']!),
-          Column(
-            children: [
-              Text(post['title'] ?? 'No Title'),
-              Text(post['description'] ?? 'No Description'),
-            ],
-          ),
-        ],
-      ),
-    );
-  }
-}
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text(post['title'] ?? 'No Title'),
+//       ),
+//       body: Column(
+//         children: [
+//           if (post['thumbnail'] != null) Image.asset(post['thumbnail']!),
+//           Column(
+//             children: [
+//               Text(post['title'] ?? 'No Title'),
+//               Text(post['description'] ?? 'No Description'),
+//             ],
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+// }

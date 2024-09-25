@@ -33,15 +33,15 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       // initialRoute: '/show/video',
       getPages: [
-        GetPage(name: '/', page: () => const LoginScreen()), //로그인
-        
-        GetPage(name: '/home', page: () => const HomeScreen()), //홈 탭
+        // GetPage(name: '/', page: () => const LoginScreen()), //로그인
 
+        GetPage(name: '/home', page: () => const HomeScreen()), //홈 탭
         GetPage(name: '/learn', page: () => const LearningScreen()), //학습 탭
         GetPage(name: '/learn/detail', page: () => const DetailedScreen()), //학습하기 상세
-        GetPage(name: '/learn/detail/video', page: () => const TranslationScreen()), //수어 번역
 
+        GetPage(name: '/detail/video', page: () => const TranslationScreen()), //수어 번역
         GetPage(name: '/show/video', page: () => VideoPlayerView()), //동영상 재생 스크린
+
         GetPage(name: '/pdf', page: () => const PdfScreen()), //PDF
       ],
       home: const LoginScreen(),

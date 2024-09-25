@@ -127,12 +127,12 @@ class LearningScreen extends StatelessWidget {
 
           // border
           Container(
-            margin: const EdgeInsets.fromLTRB(0, 9, 0, 0),
+            margin: const EdgeInsets.fromLTRB(20, 9, 20, 0),
+            // margin: const EdgeInsets.fromLTRB(0, 9, 0, 0),
             decoration: const BoxDecoration(
                 border: Border(bottom: BorderSide(color: Color(0xffD9D9D9)))),
           ),
 
-          // 전체 학습 내역을 스크롤 가능하도록 `Expanded`로 감싸기
           // 전체 학습 내역을 스크롤 가능하도록 `Expanded`로 감싸기
           Expanded(
             child: Column(

@@ -78,12 +78,13 @@ class LoginScreen extends StatelessWidget {
                 backgroundColor: const Color(0xff85B3F8),
                 // backgroundColor: Colors.blueGrey,
               ),
-              onPressed: () {
-                Get.off(
-                  // const HomeScreen(),
-                  const LearningScreen(),
-                );
-              },
+              onPressed: () => Get.toNamed('/home'),
+              // onPressed: () {
+              //   Get.off(
+              //     // const HomeScreen(),
+              //     const LearningScreen(),
+              //   );
+              // },
               child: const Text(
                 '로그인',
                 style: TextStyle(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tharmproject/screens/detailed_screen.dart';
+import 'package:tharmproject/screens/learning_screen.dart';
 
 class ProgressList extends StatelessWidget {
   const ProgressList({super.key});
@@ -24,8 +25,11 @@ class ProgressList extends StatelessWidget {
                 width: 70,
                 height: 32, // 원래 30
                 child: TextButton(
+                    // onPressed: () {
+                    //   Get.to(() => const DetailedScreen());
+                    // },
                     onPressed: () {
-                      Get.to(() => const DetailedScreen());
+                      Get.toNamed('/learn/detail');
                     },
                     style: TextButton.styleFrom(
                       backgroundColor: const Color(0xff85B3F8),
