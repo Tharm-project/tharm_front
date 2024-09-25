@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tharmproject/screens/home_screen.dart';
+import 'package:tharmproject/screens/learning_screen.dart';
 // import 'package:tharmproject/screens/learning_screen.dart';
 
 // 로그인 페이지
@@ -79,8 +80,8 @@ class LoginScreen extends StatelessWidget {
               ),
               onPressed: () {
                 Get.off(
-                  // const LearningScreen(),
-                  const HomeScreen(),
+                  // const HomeScreen(),
+                  const LearningScreen(),
                 );
               },
               child: const Text(
