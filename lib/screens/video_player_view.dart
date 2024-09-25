@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:tharmproject/controller/video_player_view_controller.dart';
 import 'package:video_player/video_player.dart';
 
+// 동영상 재생 스크린
 class VideoPlayerView extends StatelessWidget {
   VideoPlayerView({super.key});
 

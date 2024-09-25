@@ -38,11 +38,12 @@ class MyApp extends StatelessWidget {
       ],
       // home: const LoginScreen(),
       // home: const HomeScreen(),
-      home: const LearningScreen(),
+      // home: const LearningScreen(),
       // home: const TranslationScreen(),
       // home: const PdfScreen(),
       // home: Test1234(),
       // home: TestTest(),
+      home: LearningScreen(),
     );
   }
 }
