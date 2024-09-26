@@ -36,8 +36,8 @@ class MyApp extends StatelessWidget {
         //     seedColor: const Color.fromARGB(255, 192, 145, 145)),
         // useMaterial3: true,
       ),
-      // initialRoute: '/learn/detail',
-      initialRoute: '/show/video',
+      initialRoute: '/learn/detail',
+      // initialRoute: '/show/video',
       getPages: [
         GetPage(name: '/', page: () => LoginScreen()), //로그인
 

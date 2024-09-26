@@ -25,6 +25,8 @@ class VideoPlayerViewController extends GetxController {
     videoController =
         VideoPlayerController.asset("assets/videos/test_video_2.mp4")
           ..initialize();
+    videoController.setPlaybackSpeed(1); // 영상 스피드
+    played();
 
     // await getVideoApi();
 
