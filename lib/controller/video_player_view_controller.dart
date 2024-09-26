@@ -22,11 +22,11 @@ class VideoPlayerViewController extends GetxController {
     // videoController = VideoPlayerController.networkUrl(
     //     Uri.parse("https://amuz.co.kr/themes/web/official/videos/amuz_L.webm"));
     // TODO: 영상 테스트 코드
-    // videoController =
-    //     VideoPlayerController.asset("assets/videos/test_video_2.mp4")
-    //       ..initialize();
+    videoController =
+        VideoPlayerController.asset("assets/videos/test_video_2.mp4")
+          ..initialize();
 
-    await getVideoApi();
+    // await getVideoApi();
 
     videoController.addListener(() {
       aspectRatio.value = videoController.value.aspectRatio;
