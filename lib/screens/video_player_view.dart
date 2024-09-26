@@ -4,12 +4,13 @@ import 'package:tharmproject/controller/video_player_view_controller.dart';
 import 'package:video_player/video_player.dart';
 
 class VideoPlayerView extends StatelessWidget {
-  VideoPlayerView({super.key});
-
-  final _controller = Get.put(VideoPlayerViewController());
+  const VideoPlayerView({super.key, required this.viedoId});
+  final int viedoId;
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(VideoPlayerViewController(viedoId: viedoId));
+
     return Scaffold(
       appBar: AppBar(),
       body: Padding(
@@ -19,15 +20,15 @@ class VideoPlayerView extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              _controller.title.value,
+              controller.title.value,
               style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
             ),
             const SizedBox(height: 35),
             // 영상 표시
-            _ShowViedo(controller: _controller),
+            _ShowViedo(controller: controller),
             const SizedBox(height: 60),
             Center(
-              child: _VideoPalyBtn(controller: _controller),
+              child: _VideoPalyBtn(controller: controller),
             )
           ],
         ),
