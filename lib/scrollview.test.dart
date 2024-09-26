@@ -94,7 +94,7 @@ class LearningScreen extends StatelessWidget {
                         backgroundColor: const Color(0xff85B3F8),
                       ),
                       onPressed: () {
-                        Get.to(() => const DetailedScreen());
+                        Get.to(() => DetailedScreen());
                       },
                       child: const Text(
                         '학습 하기',

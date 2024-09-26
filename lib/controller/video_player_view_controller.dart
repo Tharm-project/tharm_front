@@ -1,7 +1,11 @@
 import 'package:get/get.dart';
+import 'package:tharmproject/api/api_service.dart';
 import 'package:video_player/video_player.dart';
 
 class VideoPlayerViewController extends GetxController {
+  final ApiService apiService = ApiService.to;
+  final int viedoId;
+
   late VideoPlayerController videoController;
   Duration position = Duration.zero;
 
@@ -10,17 +14,19 @@ class VideoPlayerViewController extends GetxController {
   final RxDouble aspectRatio = RxDouble(0.0);
   final RxString title = RxString('initial');
 
+  VideoPlayerViewController({required this.viedoId});
+
   @override
-  void onInit() {
+  void onInit() async {
     // TODO: 추후 이용할 코드
     // videoController = VideoPlayerController.networkUrl(
     //     Uri.parse("https://amuz.co.kr/themes/web/official/videos/amuz_L.webm"));
     // TODO: 영상 테스트 코드
-    videoController =
-        VideoPlayerController.asset("assets/videos/test_video_2.mp4")
-          ..initialize();
-    videoController.setPlaybackSpeed(1); // 영상 스피드
-    played();
+    // videoController =
+    //     VideoPlayerController.asset("assets/videos/test_video_2.mp4")
+    //       ..initialize();
+
+    await getVideoApi();
 
     videoController.addListener(() {
       aspectRatio.value = videoController.value.aspectRatio;
@@ -35,6 +41,17 @@ class VideoPlayerViewController extends GetxController {
     });
 
     super.onInit();
+  }
+
+  Future<void> getVideoApi() async {
+    print('object');
+    final result = await apiService.gettViedioAip(viedoId);
+    print(result);
+
+    videoController = VideoPlayerController.networkUrl(Uri.parse(result['url']))
+      ..initialize();
+    videoController.setPlaybackSpeed(1); // 영상 스피드
+    played();
   }
 
 // 영상 재생

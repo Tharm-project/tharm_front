@@ -25,7 +25,7 @@ class ProgressList extends StatelessWidget {
                 height: 32, // 원래 30
                 child: TextButton(
                     onPressed: () {
-                      Get.to(() => const DetailedScreen());
+                      Get.to(() => DetailedScreen());
                     },
                     style: TextButton.styleFrom(
                       backgroundColor: const Color(0xff85B3F8),

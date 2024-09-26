@@ -109,7 +109,7 @@ class LearningScreen extends StatelessWidget {
                                     padding: EdgeInsets.zero,
                                     backgroundColor: const Color(0xff85B3F8)),
                                 onPressed: () {
-                                  Get.to(() => const DetailedScreen());
+                                  Get.to(() => DetailedScreen());
                                 },
                                 child: const Text(
                                   '학습 하기',
@@ -158,9 +158,7 @@ class LearningScreen extends StatelessWidget {
                               ],
                             ),
                           ),
-                           
-                           GetBuilder<CheckboxController>(
-                            builder: (c) {
+                          GetBuilder<CheckboxController>(builder: (c) {
                             return ListView.builder(
                               shrinkWrap: true,
                               itemCount: c.itemList.length,
@@ -169,7 +167,6 @@ class LearningScreen extends StatelessWidget {
                               },
                             );
                           }),
-                             
                           Obx(() {
                             return Visibility(
                                 visible: controller.isButtonVisible.value,
